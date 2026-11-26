@@ -190,7 +190,7 @@
                     </div>
                     <div class="info-group">
                         <table>
-                            <tr><th></th><th>Base</th><th class="gen-specific g3 g4 g5 g6 g7 g8 g9">IVs</th><th class="gen-specific g10 hide">Stat Points</th><th class="gen-specific g3 g4 g5 g6 g7 g8 g9">ESs</th><th class="gen-specific g1 g2 hide">DVs</th><th></th><th></th></tr>
+                            <tr><th></th><th>Base</th><th class="gen-specific g3 g4 g5 g6 g7 g8 g9">UPs</th><th class="gen-specific g10 hide">Stat Points</th><th class="gen-specific g3 g4 g5 g6 g7 g8 g9">ESs</th><th class="gen-specific g1 g2 hide">DVs</th><th></th><th></th></tr>
                             <tr class="hp"><td><label>HP</label></td><td><input class="base calc-trigger" value="100" /></td><td class="gen-specific g3 g4 g5 g6 g7 g8 g9"><input class="ivs calc-trigger team-trigger" type="number" min="1" max="30" value="30" /></td><td class="gen-specific g10 hide"><input class="sps calc-trigger team-trigger" type="number" min="0" max="32" value="0" /></td><td class="gen-specific g3 g4 g5 g6 g7 g8 g9"><input class="evs calc-trigger team-trigger" type="number" min="0" max="200" step="4" value="0" /></td><td class="gen-specific g1 g2 hide"><input class="dvs calc-trigger" value="15" disabled="disabled" /></td><td><span class="total">341</span></td><td></td></tr>
                             <tr class="at"><td><label>Attack</label></td><td><input class="base calc-trigger" value="100" /></td><td class="gen-specific g3 g4 g5 g6 g7 g8 g9"><input class="ivs calc-trigger team-trigger" type="number" min="1" max="30" value="30" /></td><td class="gen-specific g10 hide"><input class="sps calc-trigger team-trigger" type="number" min="0" max="32" value="0" /></td><td class="gen-specific g3 g4 g5 g6 g7 g8 g9"><input class="evs calc-trigger team-trigger" type="number" min="0" max="200" step="4" value="0" /></td><td class="gen-specific g1 g2 hide"><input class="dvs calc-trigger" value="15" /></td><td><span class="total">236</span></td><td><select class="boost calc-trigger"><option value="6">+6</option><option value="5">+5</option><option value="4">+4</option><option value="3">+3</option><option value="2">+2</option><option value="1">+1</option><option value="0" selected="selected">--</option><option value="-1">-1</option><option value="-2">-2</option><option value="-3">-3</option><option value="-4">-4</option><option value="-5">-5</option><option value="-6">-6</option></select></td></tr>
                             <tr class="df"><td><label>Defense</label></td><td><input class="base calc-trigger" value="100" /></td><td class="gen-specific g3 g4 g5 g6 g7 g8 g9"><input class="ivs calc-trigger team-trigger" type="number" min="1" max="30" value="30" /></td><td class="gen-specific g10 hide"><input class="sps calc-trigger team-trigger" type="number" min="0" max="32" value="0" /></td><td class="gen-specific g3 g4 g5 g6 g7 g8 g9"><input class="evs calc-trigger team-trigger" type="number" min="0" max="200" step="4" value="0" /></td><td class="gen-specific g1 g2 hide"><input class="dvs calc-trigger" value="15" /></td><td><span class="total">236</span></td><td><select class="boost calc-trigger"><option value="6">+6</option><option value="5">+5</option><option value="4">+4</option><option value="3">+3</option><option value="2">+2</option><option value="1">+1</option><option value="0" selected="selected">--</option><option value="-1">-1</option><option value="-2">-2</option><option value="-3">-3</option><option value="-4">-4</option><option value="-5">-5</option><option value="-6">-6</option></select></td></tr>
@@ -203,8 +203,8 @@
                     </div>
                     <div class="info-group info-selectors">
                         <div class="gen-specific g3 g4 g5 g6 g7 g8 g9 g10">
-                            <label>Nature</label>
-                            <select class="nature calc-trigger"><option value="Adamant">Adamant (+Atk, -SpA)</option><option value="Bashful">Bashful</option><option value="Bold">Bold (+Def, -Atk)</option><option value="Brave">Brave (+Atk, -Spe)</option><option value="Calm">Calm (+SpD, -Atk)</option><option value="Careful">Careful (+SpD, -SpA)</option><option value="Docile">Docile</option><option value="Gentle">Gentle (+SpD, -Def)</option><option value="Hardy" selected="selected">Hardy</option><option value="Hasty">Hasty (+Spe, -Def)</option><option value="Impish">Impish (+Def, -SpA)</option><option value="Jolly">Jolly (+Spe, -SpA)</option><option value="Lax">Lax (+Def, -SpD)</option><option value="Lonely">Lonely (+Atk, -Def)</option><option value="Mild">Mild (+SpA, -Def)</option><option value="Modest">Modest (+SpA, -Atk)</option><option value="Naive">Naive (+Spe, -SpD)</option><option value="Naughty">Naughty (+Atk, -SpD)</option><option value="Quiet">Quiet (+SpA, -Spe)</option><option value="Quirky">Quirky</option><option value="Rash">Rash (+SpA, -SpD)</option><option value="Relaxed">Relaxed (+Def, -Spe)</option><option value="Sassy">Sassy (+SpD, -Spe)</option><option value="Serious">Serious</option><option value="Timid">Timid (+Spe, -Atk)</option></select>
+                            <label>Trait(s)</label>
+                            <select class="nature calc-trigger"><option value="Bashful">Neutral</option><option value="Adamant">Lonely, Aggressive (-R.Atk, +Atk)</option><option value="Bold">Naive, Defensive (-Atk, +Def)</option><option value="Brave">Timid, Aggressive (-Spe, +Atk)</option><option value="Calm">Naive, Aware (-Atk, +R.Def)</option><option value="Careful">Lonely, Aware (-R.Atk, +R.Def)</option><option value="Gentle">Trusting, Aware (-Def, +R.Atk)</option><option value="Hasty">Trusting, Speedy (-Def, +Spe)</option><option value="Impish">Lonely, Defensive (-R.Atk, +Def)</option><option value="Jolly">Lonely, Speedy (-R.Atk, +Spe)</option><option value="Lax">Tender, Defensive (-R.Def, +Def)</option><option value="Lonely">Trusting, Aggressive (-Def, +Atk)</option><option value="Mild">Trusting, Impulsive (-Def, +R.Atk)</option><option value="Modest">Naive, Impulsive (-Atk, +R.Atk)</option><option value="Naive">Tender, Speedy (-R.Def, +Spe)</option><option value="Naughty">Tender, Aggressive (-R.Def, +Atk)</option><option value="Quiet">Timid, Impulsive (-Spe, +R.Atk)</option><option value="Rash">Tender, Impulsive (-R.Def, +R.Atk)</option><option value="Relaxed">Timid, Defensive (-Spe, +Def)</option><option value="Sassy">Timid, Aware (-Spe, R.Def)</option><option value="Timid">Naive, Speedy (-Atk, +Spe)</option></select>
                         </div>
                         <div class="gen-specific g3 g4 g5 g6 g7 g8 g9 g10">
                             <label>Ability</label>
@@ -213,7 +213,7 @@
                             <select class="ability-supreme calc-trigger hide"><option value="0">0 down</option><option value="1">1 down</option><option value="2">2 down</option><option value="3">3 down</option><option value="4">4 down</option><option value="5">5 down</option></select>
                             <select class="ability-rivalry calc-trigger hide"><option value="">Off</option><option value="Same">Same Gender</option><option value="Opposite">Opposite Genders</option></select>
                             <input class="ability-advanced calc-trigger hide" type="checkbox" title="Click here to manually choose the boost. Will be done automatically otherwise.">
-                            <select class="ability-proto-quark calc-trigger hide"><option value="0">Attack</option><option value="1">Defense</option><option value="2">Sp. Atk</option><option value="3">Sp. Def</option><option value="4">Speed</option></select>
+                            <select class="ability-proto-quark calc-trigger hide"><option value="0">Attack</option><option value="1">Defense</option><option value="2">R. Atk</option><option value="3">R. Def</option><option value="4">Speed</option></select>
                         </div>
                         <div class="gen-specific g2 g3 g4 g5 g6 g7 g8 g9 g10">
                             <label>Item</label>
@@ -238,7 +238,7 @@
                         <select class="move-selector calc-trigger small-select"></select>
                         <input class="move-bp calc-trigger" value="50" />
                         <select class="move-type calc-trigger"></select>
-                        <select class="move-cat calc-trigger gen-specific g4 g5 g6 g7 g8 g9 g10"><option value="Physical">Physical</option><option value="Special">Special</option><option value="Status">Status</option></select>
+                        <select class="move-cat calc-trigger gen-specific g4 g5 g6 g7 g8 g9 g10"><option value="Physical">Physical</option><option value="Special">Ranged</option><option value="Status">Support</option></select>
                         <input class="move-crit calc-trigger btn-input" type="checkbox" id="critL1" /><label class="btn crit-btn" for="critL1" title="Force this attack to be a critical hit?">Crit</label>
                         <input class="move-z calc-trigger btn-input" type="checkbox" id="zL1" /><label class="btn x-btn gen-specific g7 natdex-specific n8 n9 n10" for="zL1" title="Use the corresponding Z-Move?">Z-Move</label>
                         <select class="move-hits calc-trigger hide"><option value="1">1 hit</option><option value="2">2 hits</option><option value="3">3 hits</option><option value="4">4 hits</option><option value="5">5 hits</option><option value="6">6 hits</option><option value="7">7 hits</option><option value="8">8 hits</option><option value="9">9 hits</option><option value="10">10 hits</option></select>
@@ -252,7 +252,7 @@
                         <select class="move-selector calc-trigger small-select"></select>
                         <input class="move-bp calc-trigger" value="0" />
                         <select class="move-type calc-trigger"></select>
-                        <select class="move-cat calc-trigger gen-specific g4 g5 g6 g7 g8 g9 g10"><option value="Physical">Physical</option><option value="Special">Special</option><option value="Status">Status</option></select>
+                        <select class="move-cat calc-trigger gen-specific g4 g5 g6 g7 g8 g9 g10"><option value="Physical">Physical</option><option value="Special">Ranged</option><option value="Status">Support</option></select>
                         <input class="move-crit calc-trigger btn-input" type="checkbox" id="critL2" /><label class="btn crit-btn" for="critL2" title="Force this attack to be a critical hit?">Crit</label>
                         <input class="move-z calc-trigger btn-input" type="checkbox" id="zL2" /><label class="btn x-btn gen-specific g7 natdex-specific n8 n9 n10" for="zL2" title="Use the corresponding Z-Move?">Z-Move</label>
                         <select class="move-hits calc-trigger hide"><option value="1">1 hit</option><option value="2">2 hits</option><option value="3">3 hits</option><option value="4">4 hits</option><option value="5">5 hits</option><option value="6">6 hits</option><option value="7">7 hits</option><option value="8">8 hits</option><option value="9">9 hits</option><option value="10">10 hits</option></select>
@@ -266,7 +266,7 @@
                         <select class="move-selector calc-trigger small-select"></select>
                         <input class="move-bp calc-trigger" value="0" />
                         <select class="move-type calc-trigger"></select>
-                        <select class="move-cat calc-trigger gen-specific g4 g5 g6 g7 g8 g9 g10"><option value="Physical">Physical</option><option value="Special">Special</option><option value="Status">Status</option></select>
+                        <select class="move-cat calc-trigger gen-specific g4 g5 g6 g7 g8 g9 g10"><option value="Physical">Physical</option><option value="Special">Ranged</option><option value="Status">Support</option></select>
                         <input class="move-crit calc-trigger btn-input" type="checkbox" id="critL3" /><label class="btn crit-btn" for="critL3" title="Force this attack to be a critical hit?">Crit</label>
                         <input class="move-z calc-trigger btn-input" type="checkbox" id="zL3" /><label class="btn x-btn gen-specific g7 natdex-specific n8 n9 n10" for="zL3" title="Use the corresponding Z-Move?">Z-Move</label>
                         <select class="move-hits calc-trigger hide"><option value="1">1 hit</option><option value="2">2 hits</option><option value="3">3 hits</option><option value="4">4 hits</option><option value="5">5 hits</option><option value="6">6 hits</option><option value="7">7 hits</option><option value="8">8 hits</option><option value="9">9 hits</option><option value="10">10 hits</option></select>
@@ -280,7 +280,7 @@
                         <select class="move-selector calc-trigger small-select"></select>
                         <input class="move-bp calc-trigger" value="0" />
                         <select class="move-type calc-trigger"></select>
-                        <select class="move-cat calc-trigger gen-specific g4 g5 g6 g7 g8 g9 g10"><option value="Physical">Physical</option><option value="Special">Special</option><option value="Status">Status</option></select>
+                        <select class="move-cat calc-trigger gen-specific g4 g5 g6 g7 g8 g9 g10"><option value="Physical">Physical</option><option value="Special">Ranged</option><option value="Status">Support</option></select>
                         <input class="move-crit calc-trigger btn-input" type="checkbox" id="critL4" /><label class="btn crit-btn" for="critL4" title="Force this attack to be a critical hit?">Crit</label>
                         <input class="move-z calc-trigger btn-input" type="checkbox" id="zL4" /><label class="btn x-btn gen-specific g7 natdex-specific n8 n9 n10" for="zL4" title="Use the corresponding Z-Move?">Z-Move</label>
                         <select class="move-hits calc-trigger hide"><option value="1">1 hit</option><option value="2">2 hits</option><option value="3">3 hits</option><option value="4">4 hits</option><option value="5">5 hits</option><option value="6">6 hits</option><option value="7">7 hits</option><option value="8">8 hits</option><option value="9">9 hits</option><option value="10">10 hits</option></select>
@@ -337,11 +337,6 @@
                         <input class="btn-input calc-trigger" type="radio" name="weather" value="Hail" id="hail" /><label class="btn btn-small btn-right gen-specific g3 g4 g5 g6 g7 g8" for="hail">Hail</label>
                         <input class="btn-input calc-trigger" type="radio" name="weather" value="Snow" id="snow" /><label class="btn btn-small btn-right gen-specific g9 g10" for="snow">Snow</label>
                     </div>
-                    <div class="gen-specific g6 g7 natdex-specific n8 n9 n10" id="primal-weather" style="width: 23em; margin: 5px auto;" title="Select the current weather condition.">
-                        <input class="btn-input calc-trigger" type="radio" name="weather" value="Harsh Sun" id="harsh-sun" /><label class="btn btn-wide btn-left" for="harsh-sun">Harsh Sun</label>
-                        <input class="btn-input calc-trigger" type="radio" name="weather" value="Heavy Rain" id="heavy-rain" /><label class="btn btn-wide btn-mid" for="heavy-rain">Heavy Rain</label>
-                        <input class="btn-input calc-trigger" type="radio" name="weather" value="Strong Winds" id="strong-winds" /><label class="btn btn-xwide btn-right" for="strong-winds">Strong Winds</label>
-                    </div>
                     <div class="gen-specific g2 hide" style="width: 23em; margin: 0 auto 5px;" title="Select the current weather condition.">
                         <input class="btn-input calc-trigger" type="radio" name="gscWeather" value="" id="gscClear" checked="checked" /><label class="btn btn-small btn-left" for="gscClear">None</label>
                         <input class="btn-input calc-trigger" type="radio" name="gscWeather" value="Sun" id="gscSun" /><label class="btn btn-small btn-mid" for="gscSun">Sun</label>
@@ -367,7 +362,7 @@
                         <div class="gen-specific g4 g5 g6 g7 g10 divider">
                             &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
                         </div>
-                        <input class="btn-input calc-trigger" type="checkbox" id="gravity" /><label class="btn" for="gravity" title="Is gravity in effect?">Gravity</label>
+                        <input class="btn-input calc-trigger" type="checkbox" id="gravity" /><label class="btn" for="gravity" title="Is gravity in effect?">Induced Gravity</label>
                         <div class="gen-specific g8 g9 divider">
                             &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
                             <input class="btn-input calc-trigger independent-field" type="checkbox" name="neutralgas" id="neutralizingGas" /><label class="btn btn-xxwide" for="neutralizingGas" title="Is neutralizing gas in effect?">Neutralizing Gas </label>
@@ -377,10 +372,10 @@
                     <hr class="gen-specific g2 g3 g4 g5 g6 g7 g8 g9 g10" />
                     <div class="btn-group gen-specific g7 g8 g10 natdex-specific n9" id="protect-field">
                         <div class="left" title="Is this Pokémon protecting?">
-                            <input class="btn-input calc-trigger" type="checkbox" id="protectL" /><label class="btn btn-xwide" for="protectL">Protect</label>
+                            <input class="btn-input calc-trigger" type="checkbox" id="protectL" /><label class="btn btn-xwide" for="protectL">Safeguard</label>
                         </div>
                         <div class="right" title="Is this Pokémon protecting?">
-                            <input class="btn-input calc-trigger" type="checkbox" id="protectR" /><label class="btn btn-xwide" for="protectR">Protect</label>
+                            <input class="btn-input calc-trigger" type="checkbox" id="protectR" /><label class="btn btn-xwide" for="protectR">Safeguard</label>
                         </div>
                     </div>
                     <div class="btn-group gen-specific g3 g4 g5 g6 g7 g8 g9 g10">
@@ -393,44 +388,44 @@
                     </div>
                     <div class="btn-group gen-specific g7 g8 g9 g10">
                         <div class="left" title="Is this Pokémon protected by Aurora Veil?">
-                            <input class="btn-input calc-trigger" type="checkbox" id="auroraVeilL" /><label class="btn btn-xwide" for="auroraVeilL">Aurora Veil</label>
+                            <input class="btn-input calc-trigger" type="checkbox" id="auroraVeilL" /><label class="btn btn-xwide" for="auroraVeilL">Illusionist</label>
                         </div>
                         <div class="right" title="Is this Pokémon protected by Aurora Veil?">
-                            <input class="btn-input calc-trigger" type="checkbox" id="auroraVeilR" /><label class="btn btn-xwide" for="auroraVeilR">Aurora Veil</label>
+                            <input class="btn-input calc-trigger" type="checkbox" id="auroraVeilR" /><label class="btn btn-xwide" for="auroraVeilR">Illusionist</label>
                         </div>
                     </div>
                     <div class="btn-group">
                         <div class="left" title="Is this Pokémon protected by Reflect and/or Light Screen?">
-                            <input class="btn-input calc-trigger" type="checkbox" id="reflectL" /><label class="btn btn-left" for="reflectL">Reflect</label>
-                            <input class="btn-input calc-trigger" type="checkbox" id="lightScreenL" /><label class="btn btn-wide btn-right" for="lightScreenL">Light Screen</label>
+                            <input class="btn-input calc-trigger" type="checkbox" id="reflectL" /><label class="btn btn-left" for="reflectL">Imminent Shroud</label>
+                            <input class="btn-input calc-trigger" type="checkbox" id="lightScreenL" /><label class="btn btn-wide btn-right" for="lightScreenL">Distant Veil</label>
                         </div>
                         <div class="right" title="Is this Pokémon protected by Reflect and/or Light Screen?">
-                            <input class="btn-input calc-trigger" type="checkbox" id="reflectR" /><label class="btn btn-left" for="reflectR">Reflect</label>
-                            <input class="btn-input calc-trigger" type="checkbox" id="lightScreenR" /><label class="btn btn-wide btn-right" for="lightScreenR">Light Screen</label>
+                            <input class="btn-input calc-trigger" type="checkbox" id="reflectR" /><label class="btn btn-left" for="reflectR">Imminent Shroud</label>
+                            <input class="btn-input calc-trigger" type="checkbox" id="lightScreenR" /><label class="btn btn-wide btn-right" for="lightScreenR">Distant Veil</label>
                         </div>
                     </div>
                     <div class="btn-group gen-specific g8">
                         <div class="left" title="Has this Pokémon's Weakness Policy been activated?">
-                            <input class="btn-input calc-trigger" type="checkbox" id="weakL" /><label class="btn btn-xwide" for="weakL"><img src="image_res/Weakness_Policy.png"><br>Weakness Policy</label>
+                            <input class="btn-input calc-trigger" type="checkbox" id="weakL" /><label class="btn btn-xwide" for="weakL"><img src="image_res/Weakness_Policy.png"><br>Fractured Core</label>
                         </div>
                         <div class="right" title="Has this Pokémon's Weakness Policy been activated?">
-                            <input class="btn-input calc-trigger" type="checkbox" id="weakR" /><label class="btn btn-xwide" for="weakR"><img src="image_res/Weakness_Policy.png"><br>Weakness Policy</label>
+                            <input class="btn-input calc-trigger" type="checkbox" id="weakR" /><label class="btn btn-xwide" for="weakR"><img src="image_res/Weakness_Policy.png"><br>Fractured Core</label>
                         </div>
                     </div>
                     <div class="btn-group gen-specific g4 g5 g6 g7 g8 g9 g10">
                         <div class="left" title="Has Tailwind been set?">
-                            <input class="btn-input calc-trigger" type="checkbox" id="tailwindL" /><label class="btn btn-xwide" for="tailwindL">Tailwind</label>
+                            <input class="btn-input calc-trigger" type="checkbox" id="tailwindL" /><label class="btn btn-xwide" for="tailwindL">King of the Hill</label>
                         </div>
                         <div class="right" title="Has Tailwind been set?">
-                            <input class="btn-input calc-trigger" type="checkbox" id="tailwindR" /><label class="btn btn-xwide" for="tailwindR">Tailwind</label>
+                            <input class="btn-input calc-trigger" type="checkbox" id="tailwindR" /><label class="btn btn-xwide" for="tailwindR">King of the Hill</label>
                         </div>
                     </div>
                     <div class="btn-group">
                         <div class="left" title="Has this Pokémon been afflicted with Leech Seed?">
-                            <input class="btn-input calc-trigger" type="checkbox" id="leechSeedL" /><label class="btn btn-xwide" for="leechSeedL">Leech Seed</label>
+                            <input class="btn-input calc-trigger" type="checkbox" id="leechSeedL" /><label class="btn btn-xwide" for="leechSeedL">Blood Siphon</label>
                         </div>
                         <div class="right" title="Has this Pokémon been afflicted with Leech Seed?">
-                            <input class="btn-input calc-trigger" type="checkbox" id="leechSeedR" /><label class="btn btn-xwide" for="leechSeedR">Leech Seed</label>
+                            <input class="btn-input calc-trigger" type="checkbox" id="leechSeedR" /><label class="btn btn-xwide" for="leechSeedR">Blood Siphon</label>
                         </div>
                     </div>
                     <div class="btn-group gen-specific g5 g6 g7 g8 g9 natdex-specific n10">
@@ -465,10 +460,10 @@
                     </div>
                     <div class="btn-group gen-specific g4 g5 g6 g7 g8 g9 g10">
                         <div class="left" title="Is Stealth Rock affecting this side of the field?">
-                            <input class="btn-input calc-trigger" type="checkbox" id="srL" /><label class="btn btn-xwide" for="srL">Stealth Rock</label>
+                            <input class="btn-input calc-trigger" type="checkbox" id="srL" /><label class="btn btn-xwide" for="srL">Trap Card</label>
                         </div>
                         <div class="right" title="Is Stealth Rock affecting this side of the field?">
-                            <input class="btn-input calc-trigger" type="checkbox" id="srR" /><label class="btn btn-xwide" for="srR">Stealth Rock</label>
+                            <input class="btn-input calc-trigger" type="checkbox" id="srR" /><label class="btn btn-xwide" for="srR">Trap Card</label>
                         </div>
                     </div>
                     <div class="btn-group gen-specific g3 g4 g5 g6 g7 g8 g9 g10">
@@ -476,13 +471,13 @@
                             <input class="btn-input calc-trigger" type="radio" name="spikesL" value="0" id="spikesL0" checked="checked" /><label class="btn btn-xsmall btn-left" for="spikesL0">0</label>
                             <input class="btn-input calc-trigger" type="radio" name="spikesL" value="1" id="spikesL1" /><label class="btn btn-xsmall btn-mid" for="spikesL1">1</label>
                             <input class="btn-input calc-trigger" type="radio" name="spikesL" value="2" id="spikesL2" /><label class="btn btn-xsmall btn-mid" for="spikesL2">2</label>
-                            <input class="btn-input calc-trigger" type="radio" name="spikesL" value="3" id="spikesL3" /><label class="btn btn-wide btn-right" for="spikesL3">3 Spikes</label>
+                            <input class="btn-input calc-trigger" type="radio" name="spikesL" value="3" id="spikesL3" /><label class="btn btn-wide btn-right" for="spikesL3">3 Debris</label>
                         </div>
                         <div class="right" title="Are there Spikes on this side of the field?">
                             <input class="btn-input calc-trigger" type="radio" name="spikesR" value="0" id="spikesR0" checked="checked" /><label class="btn btn-xsmall btn-left" for="spikesR0">0</label>
                             <input class="btn-input calc-trigger" type="radio" name="spikesR" value="1" id="spikesR1" /><label class="btn btn-xsmall btn-mid" for="spikesR1">1</label>
                             <input class="btn-input calc-trigger" type="radio" name="spikesR" value="2" id="spikesR2" /><label class="btn btn-xsmall btn-mid" for="spikesR2">2</label>
-                            <input class="btn-input calc-trigger" type="radio" name="spikesR" value="3" id="spikesR3" /><label class="btn btn-wide btn-right" for="spikesR3">3 Spikes</label>
+                            <input class="btn-input calc-trigger" type="radio" name="spikesR" value="3" id="spikesR3" /><label class="btn btn-wide btn-right" for="spikesR3">3 Debris</label>
                         </div>
                     </div>
                     <div class="btn-group gen-specific g4 g5 g6 g7 g8 natdex-specific n9 n10" id="flower-gift">
@@ -551,18 +546,18 @@
                     </div>
                     <div class="btn-group gen-specific g2">
                         <div class="left" title="Are there Spikes on this side of the field?">
-                            <input class="btn-input calc-trigger" type="checkbox" id="gscSpikesL" /><label class="btn" for="gscSpikesL">Spikes</label>
+                            <input class="btn-input calc-trigger" type="checkbox" id="gscSpikesL" /><label class="btn" for="gscSpikesL">Debris</label>
                         </div>
                         <div class="right" title="Are there Spikes on this side of the field?">
-                            <input class="btn-input calc-trigger" type="checkbox" id="gscSpikesR" /><label class="btn" for="gscSpikesR">Spikes</label>
+                            <input class="btn-input calc-trigger" type="checkbox" id="gscSpikesR" /><label class="btn" for="gscSpikesR">Debris</label>
                         </div>
                     </div>
                     <div class="btn-group">
                         <div class="left" title="Has this Pokémon been rooted by Ingrain?">
-                            <input class="btn-input calc-trigger" type="checkbox" id="ingrainL" /><label class="btn btn-wide" for="ingrainL">Ingrain</label>
+                            <input class="btn-input calc-trigger" type="checkbox" id="ingrainL" /><label class="btn btn-wide" for="ingrainL">Rooted</label>
                         </div>
                         <div class="right" title="Has this Pokémon been rooted by Ingrain?">
-                            <input class="btn-input calc-trigger" type="checkbox" id="ingrainR" /><label class="btn btn-wide" for="ingrainR">Ingrain</label>
+                            <input class="btn-input calc-trigger" type="checkbox" id="ingrainR" /><label class="btn btn-wide" for="ingrainR">Rooted</label>
                         </div>
                     </div>
                     <div class="btn-group gen-specific g2 g3 g4 g5 g6 g7 g8 g9 g10">
@@ -713,12 +708,12 @@
                     </div>
                     <div class="info-group">
                         <table>
-                            <tr><th></th><th>Base</th><th class="gen-specific g3 g4 g5 g6 g7 g8 g9">IVs</th><th class="gen-specific g10 hide">Stat Points</th><th class="gen-specific g3 g4 g5 g6 g7 g8 g9">EVs</th><th class="gen-specific g1 g2 hide">DVs</th><th></th><th></th></tr>
+                            <tr><th></th><th>Base</th><th class="gen-specific g3 g4 g5 g6 g7 g8 g9">UPs</th><th class="gen-specific g10 hide">Stat Points</th><th class="gen-specific g3 g4 g5 g6 g7 g8 g9">ESs</th><th class="gen-specific g1 g2 hide">DVs</th><th></th><th></th></tr>
                             <tr class="hp"><td><label>HP</label></td><td><input class="base calc-trigger" value="100" /></td><td class="gen-specific g3 g4 g5 g6 g7 g8 g9"><input class="ivs calc-trigger" type="number" min="0" max="31" value="31" /></td><td class="gen-specific g10 hide"><input class="sps calc-trigger" type="number" min="0" max="32" value="0" /></td><td class="gen-specific g3 g4 g5 g6 g7 g8 g9"><input class="evs calc-trigger" type="number" min="0" max="252" step="4" value="0" /></td><td class="gen-specific g1 g2 hide"><input class="dvs calc-trigger" value="15" disabled="disabled" /></td><td><span class="total">341</span></td><td></td></tr>
                             <tr class="at"><td><label>Attack</label></td><td><input class="base calc-trigger" value="100" /></td><td class="gen-specific g3 g4 g5 g6 g7 g8 g9"><input class="ivs calc-trigger" type="number" min="0" max="31" value="31" /></td><td class="gen-specific g10 hide"><input class="sps calc-trigger" type="number" min="0" max="32" value="0" /></td><td class="gen-specific g3 g4 g5 g6 g7 g8 g9"><input class="evs calc-trigger" type="number" min="0" max="252" step="4" value="0" /></td><td class="gen-specific g1 g2 hide"><input class="dvs calc-trigger" value="15" /></td><td><span class="total">236</span></td><td><select class="boost calc-trigger"><option value="6">+6</option><option value="5">+5</option><option value="4">+4</option><option value="3">+3</option><option value="2">+2</option><option value="1">+1</option><option value="0" selected="selected">--</option><option value="-1">-1</option><option value="-2">-2</option><option value="-3">-3</option><option value="-4">-4</option><option value="-5">-5</option><option value="-6">-6</option></select></td></tr>
                             <tr class="df"><td><label>Defense</label></td><td><input class="base calc-trigger" value="100" /></td><td class="gen-specific g3 g4 g5 g6 g7 g8 g9"><input class="ivs calc-trigger" type="number" min="0" max="31" value="31" /></td><td class="gen-specific g10 hide"><input class="sps calc-trigger" type="number" min="0" max="32" value="0" /></td><td class="gen-specific g3 g4 g5 g6 g7 g8 g9"><input class="evs calc-trigger" type="number" min="0" max="252" step="4" value="0" /></td><td class="gen-specific g1 g2 hide"><input class="dvs calc-trigger" value="15" /></td><td><span class="total">236</span></td><td><select class="boost calc-trigger"><option value="6">+6</option><option value="5">+5</option><option value="4">+4</option><option value="3">+3</option><option value="2">+2</option><option value="1">+1</option><option value="0" selected="selected">--</option><option value="-1">-1</option><option value="-2">-2</option><option value="-3">-3</option><option value="-4">-4</option><option value="-5">-5</option><option value="-6">-6</option></select></td></tr>
-                            <tr class="sa gen-specific g2 g3 g4 g5 g6 g7 g8 g9 g10"><td><label>Sp. Atk</label></td><td><input class="base calc-trigger" value="100" /></td><td class="gen-specific g3 g4 g5 g6 g7 g8 g9"><input class="ivs calc-trigger" type="number" min="0" max="31" value="31" /></td><td class="gen-specific g10 hide"><input class="sps calc-trigger" type="number" min="0" max="32" value="0" /></td><td class="gen-specific g3 g4 g5 g6 g7 g8 g9"><input class="evs calc-trigger" type="number" min="0" max="252" step="4" value="0" /></td><td class="gen-specific g1 g2 hide"><input class="dvs calc-trigger" value="15" /></td><td><span class="total">236</span></td><td><select class="boost calc-trigger"><option value="6">+6</option><option value="5">+5</option><option value="4">+4</option><option value="3">+3</option><option value="2">+2</option><option value="1">+1</option><option value="0" selected="selected">--</option><option value="-1">-1</option><option value="-2">-2</option><option value="-3">-3</option><option value="-4">-4</option><option value="-5">-5</option><option value="-6">-6</option></select></td></tr>
-                            <tr class="sd gen-specific g2 g3 g4 g5 g6 g7 g8 g9 g10"><td><label>Sp. Def</label></td><td><input class="base calc-trigger" value="100" /></td><td class="gen-specific g3 g4 g5 g6 g7 g8 g9"><input class="ivs calc-trigger" type="number" min="0" max="31" value="31" /></td><td class="gen-specific g10 hide"><input class="sps calc-trigger" type="number" min="0" max="32" value="0" /></td><td class="gen-specific g3 g4 g5 g6 g7 g8 g9"><input class="evs calc-trigger" type="number" min="0" max="252" step="4" value="0" /></td><td class="gen-specific g1 g2 hide"><input class="dvs calc-trigger" value="15" disabled="disabled" /></td><td><span class="total">236</span></td><td><select class="boost calc-trigger"><option value="6">+6</option><option value="5">+5</option><option value="4">+4</option><option value="3">+3</option><option value="2">+2</option><option value="1">+1</option><option value="0" selected="selected">--</option><option value="-1">-1</option><option value="-2">-2</option><option value="-3">-3</option><option value="-4">-4</option><option value="-5">-5</option><option value="-6">-6</option></select></td></tr>
+                            <tr class="sa gen-specific g2 g3 g4 g5 g6 g7 g8 g9 g10"><td><label>R. Atk</label></td><td><input class="base calc-trigger" value="100" /></td><td class="gen-specific g3 g4 g5 g6 g7 g8 g9"><input class="ivs calc-trigger" type="number" min="0" max="31" value="31" /></td><td class="gen-specific g10 hide"><input class="sps calc-trigger" type="number" min="0" max="32" value="0" /></td><td class="gen-specific g3 g4 g5 g6 g7 g8 g9"><input class="evs calc-trigger" type="number" min="0" max="252" step="4" value="0" /></td><td class="gen-specific g1 g2 hide"><input class="dvs calc-trigger" value="15" /></td><td><span class="total">236</span></td><td><select class="boost calc-trigger"><option value="6">+6</option><option value="5">+5</option><option value="4">+4</option><option value="3">+3</option><option value="2">+2</option><option value="1">+1</option><option value="0" selected="selected">--</option><option value="-1">-1</option><option value="-2">-2</option><option value="-3">-3</option><option value="-4">-4</option><option value="-5">-5</option><option value="-6">-6</option></select></td></tr>
+                            <tr class="sd gen-specific g2 g3 g4 g5 g6 g7 g8 g9 g10"><td><label>R. Def</label></td><td><input class="base calc-trigger" value="100" /></td><td class="gen-specific g3 g4 g5 g6 g7 g8 g9"><input class="ivs calc-trigger" type="number" min="0" max="31" value="31" /></td><td class="gen-specific g10 hide"><input class="sps calc-trigger" type="number" min="0" max="32" value="0" /></td><td class="gen-specific g3 g4 g5 g6 g7 g8 g9"><input class="evs calc-trigger" type="number" min="0" max="252" step="4" value="0" /></td><td class="gen-specific g1 g2 hide"><input class="dvs calc-trigger" value="15" disabled="disabled" /></td><td><span class="total">236</span></td><td><select class="boost calc-trigger"><option value="6">+6</option><option value="5">+5</option><option value="4">+4</option><option value="3">+3</option><option value="2">+2</option><option value="1">+1</option><option value="0" selected="selected">--</option><option value="-1">-1</option><option value="-2">-2</option><option value="-3">-3</option><option value="-4">-4</option><option value="-5">-5</option><option value="-6">-6</option></select></td></tr>
                             <tr class="sl gen-specific g1 hide"><td><label>Special</label></td><td><input class="base calc-trigger" value="100" /></td><td><input class="dvs calc-trigger" value="15" /></td><td><span class="total">236</span></td><td><select class="boost calc-trigger"><option value="6">+6</option><option value="5">+5</option><option value="4">+4</option><option value="3">+3</option><option value="2">+2</option><option value="1">+1</option><option value="0" selected="selected">--</option><option value="-1">-1</option><option value="-2">-2</option><option value="-3">-3</option><option value="-4">-4</option><option value="-5">-5</option><option value="-6">-6</option></select></td></tr>
                             <tr class="sp"><td><label>Speed</label></td><td><input class="base calc-trigger" value="100" /></td><td class="gen-specific g3 g4 g5 g6 g7 g8 g9"><input class="ivs calc-trigger" type="number" min="0" max="31" value="31" /></td><td class="gen-specific g10 hide"><input class="sps calc-trigger" type="number" min="0" max="32" value="0" /></td><td class="gen-specific g3 g4 g5 g6 g7 g8 g9"><input class="evs calc-trigger" type="number" min="0" max="252" step="4" value="0" /></td><td class="gen-specific g1 g2 hide"><input class="dvs calc-trigger" value="15" /></td><td><span class="total">236</span></td><td><select class="boost calc-trigger"><option value="6">+6</option><option value="5">+5</option><option value="4">+4</option><option value="3">+3</option><option value="2">+2</option><option value="1">+1</option><option value="0" selected="selected">--</option><option value="-1">-1</option><option value="-2">-2</option><option value="-3">-3</option><option value="-4">-4</option><option value="-5">-5</option><option value="-6">-6</option></select></td><td><span class="p2-speed-mods">236</span></td></tr>
                             <tr class="gen-specific g3 g4 g5 g6 g7 g8 g9 g10"><td></td><td></td><td></td><td class='ev-total'>&nbsp;</td><td class='ev-left'>&nbsp;</td><td></td><td></td><td></td></tr>
@@ -727,7 +722,7 @@
                     <div class="info-group info-selectors">
                         <div class="gen-specific g3 g4 g5 g6 g7 g8 g9 g10">
                             <label>Nature</label>
-                            <select class="nature calc-trigger"><option value="Adamant">Adamant (+Atk, -SpA)</option><option value="Bashful">Bashful</option><option value="Bold">Bold (+Def, -Atk)</option><option value="Brave">Brave (+Atk, -Spe)</option><option value="Calm">Calm (+SpD, -Atk)</option><option value="Careful">Careful (+SpD, -SpA)</option><option value="Docile">Docile</option><option value="Gentle">Gentle (+SpD, -Def)</option><option value="Hardy" selected="selected">Hardy</option><option value="Hasty">Hasty (+Spe, -Def)</option><option value="Impish">Impish (+Def, -SpA)</option><option value="Jolly">Jolly (+Spe, -SpA)</option><option value="Lax">Lax (+Def, -SpD)</option><option value="Lonely">Lonely (+Atk, -Def)</option><option value="Mild">Mild (+SpA, -Def)</option><option value="Modest">Modest (+SpA, -Atk)</option><option value="Naive">Naive (+Spe, -SpD)</option><option value="Naughty">Naughty (+Atk, -SpD)</option><option value="Quiet">Quiet (+SpA, -Spe)</option><option value="Quirky">Quirky</option><option value="Rash">Rash (+SpA, -SpD)</option><option value="Relaxed">Relaxed (+Def, -Spe)</option><option value="Sassy">Sassy (+SpD, -Spe)</option><option value="Serious">Serious</option><option value="Timid">Timid (+Spe, -Atk)</option></select>
+                            <select class="nature calc-trigger"><option value="Bashful">Neutral</option><option value="Adamant">Lonely, Aggressive (-R.Atk, +Atk)</option><option value="Bold">Naive, Defensive (-Atk, +Def)</option><option value="Brave">Timid, Aggressive (-Spe, +Atk)</option><option value="Calm">Naive, Aware (-Atk, +R.Def)</option><option value="Careful">Lonely, Aware (-R.Atk, +R.Def)</option><option value="Gentle">Trusting, Aware (-Def, +R.Atk)</option><option value="Hasty">Trusting, Speedy (-Def, +Spe)</option><option value="Impish">Lonely, Defensive (-R.Atk, +Def)</option><option value="Jolly">Lonely, Speedy (-R.Atk, +Spe)</option><option value="Lax">Tender, Defensive (-R.Def, +Def)</option><option value="Lonely">Trusting, Aggressive (-Def, +Atk)</option><option value="Mild">Trusting, Impulsive (-Def, +R.Atk)</option><option value="Modest">Naive, Impulsive (-Atk, +R.Atk)</option><option value="Naive">Tender, Speedy (-R.Def, +Spe)</option><option value="Naughty">Tender, Aggressive (-R.Def, +Atk)</option><option value="Quiet">Timid, Impulsive (-Spe, +R.Atk)</option><option value="Rash">Tender, Impulsive (-R.Def, +R.Atk)</option><option value="Relaxed">Timid, Defensive (-Spe, +Def)</option><option value="Sassy">Timid, Aware (-Spe, R.Def)</option><option value="Timid">Naive, Speedy (-Atk, +Spe)</option></select>
                         </div>
                         <div class="gen-specific g3 g4 g5 g6 g7 g8 g9 g10">
                             <label>Ability</label>
@@ -736,7 +731,7 @@
                             <select class="ability-supreme calc-trigger hide"><option value="0">0 down</option><option value="1">1 down</option><option value="2">2 down</option><option value="3">3 down</option><option value="4">4 down</option><option value="5">5 down</option></select>
                             <select class="ability-rivalry calc-trigger hide"><option value="">Off</option><option value="Same">Same Gender</option><option value="Opposite">Opposite Genders</option></select>
                             <input class="ability-advanced calc-trigger hide" type="checkbox" title="Click here to manually choose the boost. Will be done automatically otherwise.">
-                            <select class="ability-proto-quark calc-trigger hide"><option value="0">Attack</option><option value="1">Defense</option><option value="2">Sp. Atk</option><option value="3">Sp. Def</option><option value="4">Speed</option></select>
+                            <select class="ability-proto-quark calc-trigger hide"><option value="0">Attack</option><option value="1">Defense</option><option value="2">R. Atk</option><option value="3">R. Def</option><option value="4">Speed</option></select>
                         </div>
                         <div class="gen-specific g2 g3 g4 g5 g6 g7 g8 g9 g10">
                             <label>Item</label>
@@ -761,7 +756,7 @@
                         <select class="move-selector calc-trigger small-select"></select>
                         <input class="move-bp calc-trigger" value="50" />
                         <select class="move-type calc-trigger"></select>
-                        <select class="move-cat calc-trigger gen-specific g4 g5 g6 g7 g8 g9 g10"><option value="Physical">Physical</option><option value="Special">Special</option><option value="Status">Status</option></select>
+                        <select class="move-cat calc-trigger gen-specific g4 g5 g6 g7 g8 g9 g10"><option value="Physical">Physical</option><option value="Special">Ranged</option><option value="Status">Support</option></select>
                         <input class="move-crit calc-trigger btn-input" type="checkbox" id="critR1" /><label class="btn crit-btn" for="critR1" title="Force this attack to be a critical hit?">Crit</label>
                         <input class="move-z calc-trigger btn-input" type="checkbox" id="zR1" /><label class="btn x-btn gen-specific g7 natdex-specific n8 n9 n10" for="zR1" title="Use the corresponding Z-Move?">Z-Move</label>
                         <select class="move-hits calc-trigger hide"><option value="1">1 hit</option><option value="2">2 hits</option><option value="3">3 hits</option><option value="4">4 hits</option><option value="5">5 hits</option><option value="6">6 hits</option><option value="7">7 hits</option><option value="8">8 hits</option><option value="9">9 hits</option><option value="10">10 hits</option></select>
@@ -775,7 +770,7 @@
                         <select class="move-selector calc-trigger small-select"></select>
                         <input class="move-bp calc-trigger" value="0" />
                         <select class="move-type calc-trigger"></select>
-                        <select class="move-cat calc-trigger gen-specific g4 g5 g6 g7 g8 g9 g10"><option value="Physical">Physical</option><option value="Special">Special</option><option value="Status">Status</option></select>
+                        <select class="move-cat calc-trigger gen-specific g4 g5 g6 g7 g8 g9 g10"><option value="Physical">Physical</option><option value="Special">Ranged</option><option value="Status">Support</option></select>
                         <input class="move-crit calc-trigger btn-input" type="checkbox" id="critR2" /><label class="btn crit-btn" for="critR2" title="Force this attack to be a critical hit?">Crit</label>
                         <input class="move-z calc-trigger btn-input" type="checkbox" id="zR2" /><label class="btn x-btn gen-specific g7 natdex-specific n8 n9 n10" for="zR2" title="Use the corresponding Z-Move?">Z-Move</label>
                         <select class="move-hits calc-trigger hide"><option value="1">1 hit</option><option value="2">2 hits</option><option value="3">3 hits</option><option value="4">4 hits</option><option value="5">5 hits</option><option value="6">6 hits</option><option value="7">7 hits</option><option value="8">8 hits</option><option value="9">9 hits</option><option value="10">10 hits</option></select>
@@ -789,7 +784,7 @@
                         <select class="move-selector calc-trigger small-select"></select>
                         <input class="move-bp calc-trigger" value="0" />
                         <select class="move-type calc-trigger"></select>
-                        <select class="move-cat calc-trigger gen-specific g4 g5 g6 g7 g8 g9 g10"><option value="Physical">Physical</option><option value="Special">Special</option><option value="Status">Status</option></select>
+                        <select class="move-cat calc-trigger gen-specific g4 g5 g6 g7 g8 g9 g10"><option value="Physical">Physical</option><option value="Special">Ranged</option><option value="Status">Support</option></select>
                         <input class="move-crit calc-trigger btn-input" type="checkbox" id="critR3" /><label class="btn crit-btn" for="critR3" title="Force this attack to be a critical hit?">Crit</label>
                         <input class="move-z calc-trigger btn-input" type="checkbox" id="zR3" /><label class="btn x-btn gen-specific g7 natdex-specific n8 n9 n10" for="zR3" title="Use the corresponding Z-Move?">Z-Move</label>
                         <select class="move-hits calc-trigger hide"><option value="1">1 hit</option><option value="2">2 hits</option><option value="3">3 hits</option><option value="4">4 hits</option><option value="5">5 hits</option><option value="6">6 hits</option><option value="7">7 hits</option><option value="8">8 hits</option><option value="9">9 hits</option><option value="10">10 hits</option></select>
@@ -803,7 +798,7 @@
                         <select class="move-selector calc-trigger small-select"></select>
                         <input class="move-bp calc-trigger" value="0" />
                         <select class="move-type calc-trigger"></select>
-                        <select class="move-cat calc-trigger gen-specific g4 g5 g6 g7 g8 g9 g10"><option value="Physical">Physical</option><option value="Special">Special</option><option value="Status">Status</option></select>
+                        <select class="move-cat calc-trigger gen-specific g4 g5 g6 g7 g8 g9 g10"><option value="Physical">Physical</option><option value="Special">Ranged</option><option value="Status">Support</option></select>
                         <input class="move-crit calc-trigger btn-input" type="checkbox" id="critR4" /><label class="btn crit-btn" for="critR4" title="Force this attack to be a critical hit?">Crit</label>
                         <input class="move-z calc-trigger btn-input" type="checkbox" id="zR4" /><label class="btn x-btn gen-specific g7 natdex-specific n8 n9 n10" for="zR4" title="Use the corresponding Z-Move?">Z-Move</label>
                         <select class="move-hits calc-trigger hide"><option value="1">1 hit</option><option value="2">2 hits</option><option value="3">3 hits</option><option value="4">4 hits</option><option value="5">5 hits</option><option value="6">6 hits</option><option value="7">7 hits</option><option value="8">8 hits</option><option value="9">9 hits</option><option value="10">10 hits</option></select>
