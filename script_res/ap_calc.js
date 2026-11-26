@@ -964,7 +964,7 @@ function setDictHP(typeHP) {
     { 'hp': 31, 'at': 31, 'df': 31, 'sa': 31, 'sd': 31, 'sp': 31 },
     { 'hp': 31, 'at': 31, 'df': 31, 'sa': 31, 'sd': 31, 'sp': 0 }];
     //type ordering reflects order with hidden power
-    var typeCases = ['Fighting', 'Flying', 'Poison', 'Ground', 'Rock', 'Bug', 'Ghost', 'Steel', 'Fire', 'Water', 'Grass', 'Electric', 'Psychic', 'Ice', 'Dragon', 'Dark'];
+    var typeCases = ['Fighting', 'Air', 'Poison', 'Earth', 'Gem', 'Bug', 'Ghost', 'Metal', 'Fire', 'Water', 'Grass', 'Electric', 'Psychic', 'Ice', 'Dragon', 'Dark', 'Light', 'Cosmic'];
     var changeIVCase = ['min atk', 'min atk+speed', 'max IVs', 'min speed'];
     var typeIndex = typeCases.indexOf(typeHP);
     var ivArrays = {};
@@ -1041,7 +1041,7 @@ function customHiddenPower(divValue) {
     for (let i in tempStats) {
         ivs[tempStats[i]] = pInfo.find("." + tempStats[i] + " .ivs").val();
     }
-    var typeOrder = ['Fighting', 'Flying', 'Poison', 'Ground', 'Rock', 'Bug', 'Ghost', 'Steel', 'Fire', 'Water', 'Grass', 'Electric', 'Psychic', 'Ice', 'Dragon', 'Dark'];
+    var typeOrder = ['Fighting', 'Air', 'Poison', 'Earth', 'Gem', 'Bug', 'Ghost', 'Metal', 'Fire', 'Water', 'Grass', 'Electric', 'Psychic', 'Ice', 'Dragon', 'Dark', 'Light', 'Cosmic'];
     var typeIndex = Math.floor(((ivs['hp'] & 1) + (ivs[AT] & 1) * 2 + (ivs[DF] & 1) * 4 + (ivs[SP] & 1) * 8 + (ivs[SA] & 1) * 16 + (ivs[SD] & 1) * 32) * 15 / 63);
     var hpType = typeOrder[typeIndex];
     var hpBP = 60;
@@ -1553,7 +1553,7 @@ function getTerrainEffects() {
 }
 
 function isGrounded(pokeInfo) {
-    return $("#gravity").prop("checked") || (pokeInfo.find(".type1").val() !== "Flying" && pokeInfo.find(".type2").val() !== "Flying" &&
+    return $("#gravity").prop("checked") || (pokeInfo.find(".type1").val() !== "Air" && pokeInfo.find(".type2").val() !== "Air" &&
         !(["Levitate", "Eelevate"].includes(pokeInfo.find("select.ability").val())) && pokeInfo.find("select.item").val() !== "Air Balloon");
 }
 
