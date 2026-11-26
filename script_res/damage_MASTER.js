@@ -728,7 +728,7 @@ function checkMoveTypeChange(move, field, attacker) {
     if (move.name == "Weather Ball") {
         move.type = (field.weather.indexOf("Sun") > -1 && attacker.item !== 'Utility Umbrella') || attacker.ability == 'Mega Sol' ? "Fire"
             : field.weather.indexOf("Rain") > -1 && attacker.item !== 'Utility Umbrella' ? "Water"
-                : field.weather === "Sand" ? "Rock"
+                : field.weather === "Sand" ? "Gem"
                     : ["Hail", "Snow"].indexOf(field.weather) > -1 ? "Ice"
                         : "Normal";
     }
@@ -798,7 +798,7 @@ function checkMoveTypeChange(move, field, attacker) {
                 move.type = "Fire";
                 break;
             case "Ogerpon-Cornerstone":
-                move.type = "Rock";
+                move.type = "Gem";
                 break;
             default:
                 move.type = "Grass";
@@ -1620,7 +1620,7 @@ function calcBPMods(attacker, defender, field, move, description, ateIzeBoosted,
         description.isPowerSpot = true;
     }
     //d.iii. Ally Steely Spirit (probably doesn't go here but Smogon makes Doubles research a pain to find)
-    if (field.isSteelySpirit && move.type === "Steel") {
+    if (field.isSteelySpirit && move.type === "Metal") {
         bpMods.push(0x1800);
         description.isSteelySpirit = true;
     }
@@ -1673,7 +1673,7 @@ function calcBPMods(attacker, defender, field, move, description, ateIzeBoosted,
         (attacker.ability === "Toxic Boost" && (attacker.status === "Poisoned" || attacker.status === "Badly Poisoned") && move.category === "Physical") ||
         (attacker.ability === "Mega Launcher" && move.isPulse) ||
         (attacker.ability === "Strong Jaw" && move.isBite) ||
-        (attacker.ability === "Steely Spirit" && move.type === "Steel")) {
+        (attacker.ability === "Steely Spirit" && move.type === "Metal")) {
         bpMods.push(0x1800);
         description.attackerAbility = attacker.ability;
     }
@@ -1954,11 +1954,11 @@ function calcAtMods(move, attacker, defAbility, description, field) {
         || (attacker.ability === "Transistor" && move.type === "Electric" && gen == 8)
         || (attacker.ability === "Dragon's Maw" && move.type === "Dragon")
         || (attacker.ability === "Flash Fire" && attacker.abilityOn && move.type === "Fire")
-        || (attacker.ability === "Steelworker" && move.type === "Steel")
+        || (attacker.ability === "Steelworker" && move.type === "Metal")
         || (attacker.ability === "Gorilla Tactics" && move.category === "Physical" && !attacker.isDynamax)
         || (["Plus", "Minus"].indexOf(attacker.ability) !== -1 && attacker.abilityOn && move.category === "Special")
         || (attacker.ability === "Sharpness" && move.isSlice)
-        || (attacker.ability === "Rocky Payload" && move.type === "Rock")
+        || (attacker.ability === "Rocky Payload" && move.type === "Gem")
         || (attacker.ability === "Fire Mane" && move.type === "Fire")) {
         atMods.push(0x1800);
         description.attackerAbility = attacker.ability;
@@ -2070,7 +2070,7 @@ function calcDefense(move, attacker, defender, description, hitsPhysical, isCrit
 
     //g. Sandstorm Rock types, Snowstorm Ice Types
     // unlike all other defense modifiers, Sandstorm SpD boost gets applied directly
-    if (((field.weather === "Sand" && defender.hasType("Rock") && !hitsPhysical) || (field.weather === "Snow" && defender.hasType("Ice") && hitsPhysical))
+    if (((field.weather === "Sand" && defender.hasType("Gem") && !hitsPhysical) || (field.weather === "Snow" && defender.hasType("Ice") && hitsPhysical))
         && attacker.ability !== 'Mega Sol') {
         defense = pokeRound(defense * 3 / 2);
         description.weather = field.weather;
