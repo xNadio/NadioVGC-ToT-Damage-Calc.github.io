@@ -213,7 +213,7 @@ function getMoveEffectiveness(move, type1, type2, description, isForesight, isSc
     var type2Effect = type2 && type2 != type1 ? getSingleTypeEffectiveness(move, type2, description, isForesight, isScrappy, isGravity, defItem, isStrongWinds) : 1;
     var typeEffectiveness = type1Effect * type2Effect;
     var usesTeraShell = isTeraShell && typeEffectiveness > 0.5;
-    var effectiveOverride = overrideTypeEffectiveness(move, [type1, type2].includes("Flying"), defItem, isGravity, defIsTera, usesTeraShell);
+    var effectiveOverride = overrideTypeEffectiveness(move, [type1, type2].includes("Air"), defItem, isGravity, defIsTera, usesTeraShell);
     if (effectiveOverride != -1) {
         typeEffectiveness = effectiveOverride;
         if (usesTeraShell) {
@@ -234,7 +234,7 @@ function getSingleTypeEffectiveness(move, type, description, isForesight, isScra
             description.isForesight = true;
         return 1;
     }
-    else if ((isGravity || defItem == "Iron Ball") && type === "Flying" && move.type === "Ground") {
+    else if ((isGravity || defItem == "Iron Ball") && type === "Air" && move.type === "Earth") {
         if (isGravity)
             description.isGravity = true;
         else if (defItem == "Iron Ball")
@@ -249,7 +249,7 @@ function getSingleTypeEffectiveness(move, type, description, isForesight, isScra
     }
     else {
         var effectiveness = typeChart[move.type][type];
-        if (isStrongWinds && type == "Flying" && effectiveness > 1) {
+        if (isStrongWinds && type == "Air" && effectiveness > 1) {
             effectiveness = 1;
         }
         else if (defItem == "Ring Target" && effectiveness == 0) {
@@ -257,19 +257,19 @@ function getSingleTypeEffectiveness(move, type, description, isForesight, isScra
             effectiveness = 1;
         }
         if (move.name === "Flying Press") {
-            effectiveness *= typeChart["Flying"][type];
+            effectiveness *= typeChart["Air"][type];
         }
         return effectiveness;
     }
 }
-function overrideTypeEffectiveness(move, defIsFlyingType, defItem, isGravity, defIsTera, usesTeraShell) {
+function overrideTypeEffectiveness(move, defIsAirType, defItem, isGravity, defIsTera, usesTeraShell) {
     if (usesTeraShell) {
         return 0.5;
     }
     else if (move.type == "Stellar" && defIsTera) {
         return 2;
     }
-    else if (defIsFlyingType && move.type === "Ground" && (move.name == "Thousand Arrows" || defItem == "Iron Ball") && !isGravity && gen >= 5) {
+    else if (defIsAirType && move.type === "Earth" && (move.name == "Thousand Arrows" || defItem == "Iron Ball") && !isGravity && gen >= 5) {
         return 1;
     }
     else {
@@ -814,7 +814,7 @@ function checkMoveTypeChange(move, field, attacker) {
 
 function checkConditionalPriority(move, terrain, attacker, attIsGrounded) {
     if ((move.isHealing && attacker.ability == "Triage") || (move.name == "Grassy Glide" && terrain == "Grassy" && attIsGrounded)
-        || (move.type == "Flying" && attacker.ability == "Gale Wings" && (gen == 6 || attacker.curHP == attacker.maxHP)))
+        || (move.type == "Air" && attacker.ability == "Gale Wings" && (gen == 6 || attacker.curHP == attacker.maxHP)))
         move.isPriority = true;
 }
 
@@ -1022,7 +1022,7 @@ function critMove(move, defAbility) {
 
 //UNUSED CURRENTLY
 function HiddenPower(move, attacker, description) {
-    var typeOrder = ['Fighting', 'Flying', 'Poison', 'Ground', 'Rock', 'Bug', 'Ghost', 'Steel', 'Fire', 'Water', 'Grass', 'Electric', 'Psychic', 'Ice', 'Dragon', 'Dark'];
+    var typeOrder = ['Fighting', 'Air', 'Poison', 'Earth', 'Gem', 'Bug', 'Ghost', 'Metal', 'Fire', 'Water', 'Grass', 'Electric', 'Psychic', 'Ice', 'Dragon', 'Dark'];
     var typeIndex = Math.floor(((attacker.ivs['hp'] & 1) + (attacker.ivs[AT] & 1) * 2 + (attacker.ivs[DF] & 1) * 4 + (attacker.ivs[SP] & 1) * 8 + (attacker.ivs[SA] & 1) * 16 + (attacker.ivs[SD] & 1) * 32) * 15 / 63);
     move.type = typeOrder[typeIndex];
     if (gen < 6) {
@@ -1072,7 +1072,7 @@ function checkAbilityTypeChange(move, attacker, description) {
         if (attacker.ability !== "Normalize" && move.type === "Normal") { //Z-Moves don't receive -ate type changes
             switch (attacker.ability) {
                 case "Aerilate":
-                    move.type = "Flying";
+                    move.type = "Air";
                     break;
                 case "Pixilate":
                     move.type = "Fairy";
@@ -1111,14 +1111,14 @@ function immunityChecks(move, attacker, defender, field, description, defAbility
         (move.type === "Fire" && ["Flash Fire", "Well-Baked Body"].indexOf(defAbility) !== -1) ||
         (move.type === "Water" && (["Dry Skin", "Water Absorb"].indexOf(defAbility) !== -1 || (defAbility === 'Storm Drain' && gen !== 4))) ||
         (move.type === "Electric" && (["Motor Drive", "Volt Absorb"].indexOf(defAbility) !== -1 || (defAbility === 'Lightning Rod' && gen > 4))) ||
-        (move.type === "Ground" && ((!field.isGravity && defender.item !== "Iron Ball" && ['Levitate','Eelevate'].includes(defAbility)) || defAbility === "Earth Eater")) ||
+        (move.type === "Earth" && ((!field.isGravity && defender.item !== "Iron Ball" && ['Levitate','Eelevate'].includes(defAbility)) || defAbility === "Earth Eater")) ||
         (move.isBullet && defAbility === "Bulletproof") ||
         (move.isSound && defAbility === "Soundproof") ||
         (move.isWind && defAbility === "Wind Rider")) {
         description.defenderAbility = defAbility;
         return { "damage": [0], "description": buildDescription(description) };
     }
-    if (move.type === "Ground" && !field.isGravity && defender.item === "Air Balloon" && move.name !== "Thousand Arrows") {
+    if (move.type === "Earth" && !field.isGravity && defender.item === "Air Balloon" && move.name !== "Thousand Arrows") {
         description.defenderItem = defender.item;
         return { "damage": [0], "description": buildDescription(description) };
     }
@@ -1126,7 +1126,7 @@ function immunityChecks(move, attacker, defender, field, description, defAbility
         return { "damage": [0], "description": buildDescription(description) };
     }
     if (move.name === "Sky Drop" &&
-        (defender.hasType("Flying") ||
+        (defender.hasType("Air") ||
             (gen >= 6 && defender.weight >= 200.0) || field.isGravity)) {
         return { "damage": [0], "description": buildDescription(description) };
     }
@@ -1292,12 +1292,12 @@ function setDamage(move, attacker, defender, description, isQuarteredByProtect, 
  * Returns true if the Pokemon is grounded, and false if it is airborne. Cases not covered:
  * - Klutz + Iron Ball/Air Balloon (handled in function checkKlutz)
  * - Levitate + ignoring/negating abilities (handled before; ability should be blank by the time this function is called)
- * - Flying type + Ring Target (handled in function getMoveEffectiveness)
+ * - Air type + Ring Target (handled in function getMoveEffectiveness)
  * - Thousand Arrows (handled in function getMoveEffectiveness)
- * - Flying type + Roost (not implemented, not planning on implementing, wouldn't be handled here anyway)
+ * - Air type + Roost (not implemented, not planning on implementing, wouldn't be handled here anyway)
  */
 function pIsGrounded(mon, field) {
-    return field.isGravity || mon.item == "Iron Ball" || (mon.item != "Air Balloon" && !(["Levitate", "Eelevate"].includes(mon.ability)) && !(mon.hasType("Flying"))) || field.isIngrain;
+    return field.isGravity || mon.item == "Iron Ball" || (mon.item != "Air Balloon" && !(["Levitate", "Eelevate"].includes(mon.ability)) && !(mon.hasType("Air"))) || field.isIngrain;
 }
 
 //1. Custom BP
@@ -1399,7 +1399,7 @@ function basePowerFunc(move, description, turnOrder, attacker, defender, field, 
         //g. Dichotomous BP
         //g.i. Acrobatics
         case "Acrobatics":
-            basePower = attacker.item === 'Flying Gem'
+            basePower = attacker.item === 'Air Gem'
                 || attacker.item === "" ? 110 : 55;
             if (basePower !== move.bp) description.moveBP = basePower;
             break;
@@ -1632,7 +1632,7 @@ function calcBPMods(attacker, defender, field, move, description, ateIzeBoosted,
         description.attackerAbility = attacker.ability;
     }
     //e.ii. Sand Force
-    else if (attacker.ability === "Sand Force" && field.weather === "Sand" && ["Rock", "Ground", "Steel"].indexOf(move.type) !== -1) {
+    else if (attacker.ability === "Sand Force" && field.weather === "Sand" && ["Gem", "Earth", "Metal"].indexOf(move.type) !== -1) {
         bpMods.push(0x14CD);
         description.attackerAbility = attacker.ability;
         description.weather = field.weather;
@@ -2182,8 +2182,8 @@ function calcGeneralMods(baseDamage, move, attacker, defender, defAbility, field
         baseDamage = pokeRound(baseDamage * 0x800 / 0x1000);
         description.weather = field.weather;
     }
-    else if ((field.weather === "Strong Winds" && defender.hasType("Flying") &&
-        typeChart[move.type]["Flying"] > 1)) {
+    else if ((field.weather === "Strong Winds" && defender.hasType("Air") &&
+        typeChart[move.type]["Air"] > 1)) {
         description.weather = field.weather;        //not actually a mod, just adding the description here
     }
     //d. Glaive Rush 2x mod
@@ -2425,7 +2425,7 @@ function calcFinalMods(move, attacker, defender, field, description, isCritical,
         defender.consumeResistBerry = true;
     }
     //r. Doubled damage (These likely won't be added since Minimize/Dig/Dive are hardly ever used)
-    //r.i. Body Slam, Stomp, Dragon Rush, Steamroller, Heat Crash, Heavy Slam, Flying Press, Malicious Moonsault
+    //r.i. Body Slam, Stomp, Dragon Rush, Steamroller, Heat Crash, Heavy Slam, Air Press, Malicious Moonsault
     //r.ii. Earthquake
     //r.iii. Surf, Whirlpool
 
