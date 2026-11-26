@@ -1251,7 +1251,7 @@ $(".set-selector").change(function () {
                 pokeObj.find("." + STATS[i] + " .ivs").val((set.ivs && typeof set.ivs[STATS[i]] !== "undefined") ? set.ivs[STATS[i]] : 30);
                 pokeObj.find("." + STATS[i] + " .dvs").val((set.dvs && typeof set.dvs[STATS[i]] !== "undefined") ? set.dvs[STATS[i]] : 15);
             }
-            setSelectValueIfValid(pokeObj.find(".nature"), set.nature, "Serious");
+            setSelectValueIfValid(pokeObj.find(".nature"), set.nature, "Bashful");
             setSelectValueIfValid(abilityObj, set.ability, pokemon.ab ? pokemon.ab : "");   //necessary check; custom sets with abilities different to defaults will have the default ability instead, and custom sets with non-existent abilities won't default to (other)
             saveBaseAb[pokeObjID] = set.ability ? set.ability : pokemon.ab ? pokemon.ab : "";
             setSelectValueIfValid(itemObj, set.item, "");
@@ -1297,7 +1297,7 @@ $(".set-selector").change(function () {
                 pokeObj.find("." + STATS[i] + " .ivs").val(30);
                 pokeObj.find("." + STATS[i] + " .dvs").val(15);
             }
-            pokeObj.find(".nature").val("Serious");
+            pokeObj.find(".nature").val("Bashful");
             setSelectValueIfValid(abilityObj, pokemon.ab, "");  //necessary check; blank abilities won't update to their defaults otherwise
             saveBaseAb[pokeObjID] = pokemon.ab ? pokemon.ab : "";
             itemObj.val("");
