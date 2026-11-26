@@ -247,20 +247,6 @@ function getSingleTypeEffectiveness(move, type, description, isForesight, isScra
     else if (move.name === "Nihil Light" && type === "Fairy") {
         return 1;
     }
-    else {
-        var effectiveness = typeChart[move.type][type];
-        if (isStrongWinds && type == "Air" && effectiveness > 1) {
-            effectiveness = 1;
-        }
-        else if (defItem == "Ring Target" && effectiveness == 0) {
-            description.defenderItem = "Ring Target";
-            effectiveness = 1;
-        }
-        if (move.name === "Flying Press") {
-            effectiveness *= typeChart["Air"][type];
-        }
-        return effectiveness;
-    }
 }
 function overrideTypeEffectiveness(move, defIsAirType, defItem, isGravity, defIsTera, usesTeraShell) {
     if (usesTeraShell) {
