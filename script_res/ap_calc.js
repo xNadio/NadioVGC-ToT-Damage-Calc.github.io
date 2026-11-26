@@ -2,8 +2,8 @@
 var bounds = {
     "level": [0, 100],
     "base": [1, 255],
-    "evs": [0, 252],
-    "ivs": [0, 31],
+    "evs": [0, 200],
+    "ivs": [0, 30],
     "dvs": [0, 15],
     "move-bp": [0, 999],
     "avs": [0, 200],
@@ -1242,13 +1242,13 @@ $(".set-selector").change(function () {
             pokeObj.find(".hp .sps").val((set.sps && typeof set.sps.hp !== "undefined") ? set.sps.hp : 0);
             pokeObj.find(".hp .evs").val((set.evs && typeof set.evs.hp !== "undefined") ? set.evs.hp : 0);
             pokeObj.find(".hp .avs").val((set.avs && typeof set.avs.hp !== "undefined") ? set.avs.hp : 0);
-            pokeObj.find(".hp .ivs").val((set.ivs && typeof set.ivs.hp !== "undefined") ? set.ivs.hp : 31);
+            pokeObj.find(".hp .ivs").val((set.ivs && typeof set.ivs.hp !== "undefined") ? set.ivs.hp : 30);
             pokeObj.find(".hp .dvs").val((set.dvs && typeof set.dvs.hp !== "undefined") ? set.dvs.hp : 15);
             for (i = 0, n = STATS.length; i < n; i++) {
                 pokeObj.find("." + STATS[i] + " .sps").val((set.sps && typeof set.sps[STATS[i]] !== "undefined") ? set.sps[STATS[i]] : 0);
                 pokeObj.find("." + STATS[i] + " .evs").val((set.evs && typeof set.evs[STATS[i]] !== "undefined") ? set.evs[STATS[i]] : 0);
                 pokeObj.find("." + STATS[i] + " .avs").val((set.avs && typeof set.avs[STATS[i]] !== "undefined") ? set.avs[STATS[i]] : 0);
-                pokeObj.find("." + STATS[i] + " .ivs").val((set.ivs && typeof set.ivs[STATS[i]] !== "undefined") ? set.ivs[STATS[i]] : 31);
+                pokeObj.find("." + STATS[i] + " .ivs").val((set.ivs && typeof set.ivs[STATS[i]] !== "undefined") ? set.ivs[STATS[i]] : 30);
                 pokeObj.find("." + STATS[i] + " .dvs").val((set.dvs && typeof set.dvs[STATS[i]] !== "undefined") ? set.dvs[STATS[i]] : 15);
             }
             setSelectValueIfValid(pokeObj.find(".nature"), set.nature, "Serious");
@@ -1288,13 +1288,13 @@ $(".set-selector").change(function () {
             pokeObj.find(".hp .sps").val(0);
             pokeObj.find(".hp .evs").val(0);
             pokeObj.find(".hp .avs").val(0);
-            pokeObj.find(".hp .ivs").val(31);
+            pokeObj.find(".hp .ivs").val(30);
             pokeObj.find(".hp .dvs").val(15);
             for (i = 0, n = STATS.length; i < n; i++) {
                 pokeObj.find("." + STATS[i] + " .sps").val(0);
                 pokeObj.find("." + STATS[i] + " .evs").val(0);
                 pokeObj.find("." + STATS[i] + " .avs").val(0);
-                pokeObj.find("." + STATS[i] + " .ivs").val(31);
+                pokeObj.find("." + STATS[i] + " .ivs").val(30);
                 pokeObj.find("." + STATS[i] + " .dvs").val(15);
             }
             pokeObj.find(".nature").val("Serious");
